@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: shortener_url_development
+
+staging:
+  <<: *default
+  database: shortener_url_staging
+
+test:
+  <<: *default
+  database: shortener_url_test
