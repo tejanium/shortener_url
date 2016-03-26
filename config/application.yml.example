@@ -1,0 +1,11 @@
+default: &default
+  domain: 'localhost:3000'
+
+development:
+  <<: *default
+
+staging:
+  <<: *default
+
+test:
+  <<: *default

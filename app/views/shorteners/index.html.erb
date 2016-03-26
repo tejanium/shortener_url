@@ -1,0 +1,24 @@
+<div id='main-interface'>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <% if @generated_url %>
+        <% if @generated_url.errors.any? %>
+          <%= @generated_url.errors.full_messages.join() %>
+        <% else %>
+          <% url = shortened_url(key: @generated_url.key) %>
+          <%= link_to url, url, target: '_blank' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <%= form_for @url, url: '/', html: { class: 'form-inline' } do |f| %>
+        <div class="form-group">
+          <%= f.label :url %>: &nbsp;
+          <%= f.text_field :url, class: 'form-control' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
