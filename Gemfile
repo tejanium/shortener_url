@@ -12,3 +12,15 @@ gem 'bootstrap-sass'
 group :development, :test do
   gem 'byebug'
 end
+
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
+end
+
+group :production do
+  gem 'unicorn'
+end
+
